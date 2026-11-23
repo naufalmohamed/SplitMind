@@ -129,7 +129,7 @@ identical seeds for strategy differences. dz is the paired effect size (mean dif
 
 ## Independent validation (2026-11-23)
 
-An independent validation (`VALIDATION_REPORT_codex.md`, repository root) reran every Phase 1 and Phase 2 experiment in a separate copy. All 12 Phase 1 CSVs and all 33 Phase 2 output files were byte-identical, and it found no blocking issue. How each finding was handled:
+An independent validation reran every Phase 1 and Phase 2 experiment in a separate copy. All 12 Phase 1 CSVs and all 33 Phase 2 output files were byte-identical, and it found no blocking issue. How each finding was handled:
 
 | ID | Finding | Resolution |
 |---|---|---|

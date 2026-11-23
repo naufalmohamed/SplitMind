@@ -34,9 +34,7 @@ deterministic given the seed.
 
 Overall summaries: [`results/summary.md`](results/summary.md) (Phase 1) and
 [`results/phase2/summary.md`](results/phase2/summary.md) (Phase 2). Every number
-there is traceable to the generated `tables.md` files and the raw CSVs. An
-independent rerun of all experiments is documented in
-[`VALIDATION_REPORT_codex.md`](VALIDATION_REPORT_codex.md).
+there is traceable to the generated `tables.md` files and the raw CSVs.
 
 ## 1. Research questions
 
@@ -219,6 +217,5 @@ experiments/        Phase 1: latency_sweep.py, conflict_sweep.py, metacognition_
                     node_failure.py; Phase 2: p2a_*.py ... p2e_*.py
 analysis/           plots.py (Phase 1), p2*.py (Phase 2), paper_figures.py (paper)
 tests/              unittest suite (62 tests, incl. tests/test_phase2.py)
-VALIDATION_REPORT_codex.md   independent rerun and code audit
 results/            Phase 1: raw CSVs, figures/, tables/, tables.md, summary.md; Phase 2: phase2/
 ```
