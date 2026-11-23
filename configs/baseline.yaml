@@ -1,0 +1,29 @@
+# Default simulation parameters (fixed before any strategy comparison was run).
+# Every experiment config starts from these values and overrides a subset.
+world:
+  n_rooms: 6            # corridor room_a ... room_f
+  p_move: 0.1           # per-step probability the key relocates
+  beacon_interval: 3    # remote tracker fires every 3 steps
+  beacon_noise: 0.1     # 10% of beacon readings name a wrong room
+  max_steps: 50
+observer:
+  sight_confidence: 0.99
+  beacon_confidence: 0.8
+memory:
+  consolidate: true
+  max_confidence: 0.99
+  rehearsal_interval: 1
+network:
+  latency: 0
+  jitter_frac: 0.5
+strategy:
+  name: freshness_conflict
+  form: multiplicative
+  lam: 0.1              # ~ -ln(1 - p_move)
+  delta: 0.5
+  tau: 0.9
+self_monitor:
+  hazard: 0.1
+  stale_threshold: 0.5
+  conflict_min_confidence: 0.5
+  unknown_confidence: 0.9

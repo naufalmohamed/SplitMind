@@ -1,0 +1,11 @@
+# Optional Experiment 4: temporary node failure during steps [5, 15).
+seeds: 50
+seed_offset: 0
+base_config: configs/baseline.yaml
+overrides: {}
+failure_window: [5, 15]
+modules: [none, memory, observer, self_monitor]
+grid:
+  network.latency: [2]
+  strategy.name: [fifo, confidence, freshness, freshness_conflict]
+output: results/failure

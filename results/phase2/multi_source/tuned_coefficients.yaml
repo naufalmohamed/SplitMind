@@ -1,0 +1,8 @@
+tuned_on: dev_profiles, seeds 1000-1019
+objective: ws_correct_frac
+dev_score: 0.8087665393950562
+coefficients:
+  w_r: 0.0
+  w_c: 1.0
+  w_a: 0.1
+  w_g: 0.5

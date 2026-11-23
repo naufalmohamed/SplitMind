@@ -1,0 +1,14 @@
+# Phase 2D: Self-Monitor without privileged prior knowledge (confirmatory, fixed before running).
+# True world change probability p varies; passive monitors with fixed assumed hazards h, a no-prior
+# monitor that infers h online, and the naive baseline all observe the same episodes.
+# A monitor has the CORRECT prior when h == p; otherwise it under- (h < p) or over-estimates (h > p).
+seeds: 50
+seed_offset: 0
+base_config: configs/baseline.yaml
+overrides: {}
+latency: [0, 2, 4, 8]
+world_change_probability: [0.05, 0.1, 0.3]
+observation_error_probability: 0.1
+assumed_hazards: [0.05, 0.1, 0.3]
+strategies: [fifo, confidence, freshness, freshness_conflict]
+output: results/phase2/monitor_prior

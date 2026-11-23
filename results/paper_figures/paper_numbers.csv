@@ -1,0 +1,90 @@
+figure,quantity,value,lo,hi
+delay,success d=0,1.0,0.9811539940816792,1.0
+delay,success d=1,1.0,0.9811539940816792,1.0
+delay,success d=2,1.0,0.9811539940816792,1.0
+delay,success d=3,0.98,0.9497121344948062,0.9921956998236058
+delay,success d=4,0.97,0.9361048802675268,0.9861798741692518
+delay,success d=5,0.94,0.8980673646931491,0.9653481500987284
+delay,success d=6,0.895,0.8448186177864638,0.9302930375380628
+delay,success d=8,0.82,0.7608840628376157,0.8670544933746589
+delay,success d=10,0.725,0.6593153404748534,0.7822039568619022
+delay,success d=12,0.695,0.6280132012185453,0.7546368564733095
+delay,success d=16,0.54,0.4708216309361468,0.6076706885903875
+delay,coherence d=0,1.0,1.0,1.0
+delay,coherence d=1,0.8922067530422794,0.8740769483835639,0.9103365577009948
+delay,coherence d=2,0.792981248482468,0.7658423846885359,0.8201201122764
+delay,coherence d=3,0.6793168208143338,0.6485610991693131,0.7100725424593544
+delay,coherence d=4,0.6135856340560488,0.5813285164945724,0.6458427516175252
+delay,coherence d=5,0.5441934324132611,0.5125028262730015,0.5758840385535208
+delay,coherence d=6,0.5097924565424801,0.476882649780743,0.5427022633042171
+delay,coherence d=8,0.4746301106509775,0.4419771142424258,0.5072831070595293
+delay,coherence d=10,0.4285158269671231,0.3948851904887991,0.4621464634454472
+delay,coherence d=12,0.3935224803855647,0.3606491564390935,0.4263958043320359
+delay,coherence d=16,0.3506262951498712,0.3220101211584035,0.3792424691413389
+delay,median lead d=1,0.0,-1.0,1.0
+delay,median lead d=2,1.0,0.0,2.0
+delay,median lead d=3,2.0,1.0,4.0
+delay,median lead d=4,3.0,1.0,5.0
+delay,median lead d=5,5.0,3.0,6.0
+delay,median lead d=6,5.0,3.0,7.0
+delay,median lead d=8,6.5,5.0,8.0
+delay,median lead d=10,8.0,6.0,11.0
+delay,median lead d=12,10.0,8.0,13.0
+delay,median lead d=16,14.0,11.0,16.0
+one_vs_many,One source: corridor (2A) | fifo minus freshness (pp),-2.6071245263878096,-2.9390290269119195,-2.285095175545724
+one_vs_many,One source: three-fact world (2E) | fifo minus freshness (pp),-2.480156929866626,-2.8653934019377036,-2.095404575603231
+one_vs_many,"Several sources (2B, held-out) | fifo minus freshness (pp)",0.0,0.0,0.0
+one_vs_many,One source: corridor (2A) | confidence minus freshness (pp),-1.1361518597149516,-1.3735746804534705,-0.9090947316760634
+one_vs_many,One source: three-fact world (2E) | confidence minus freshness (pp),-0.9688850675741552,-1.2725177231606215,-0.6772247066162344
+one_vs_many,"Several sources (2B, held-out) | confidence minus freshness (pp)",6.059064806689572,4.394989485909239,7.667510288025466
+one_vs_many,One source: corridor (2A) | freshness_conflict minus freshness (pp),-0.31809159915693946,-0.4682850236944344,-0.17543324654092052
+one_vs_many,One source: three-fact world (2E) | freshness_conflict minus freshness (pp),-0.15549381885851257,-0.2665410547100288,-0.04689300711322708
+one_vs_many,"Several sources (2B, held-out) | freshness_conflict minus freshness (pp)",6.97084133092984,5.687537397338023,8.252922900456209
+one_vs_many,One source: three-fact world (2E) | reliability minus freshness (pp),-0.06319633371631835,-0.12460667200642091,-0.003383421714891678
+one_vs_many,"Several sources (2B, held-out) | reliability minus freshness (pp)",8.642993433926462,7.130393226832394,10.095553425213627
+profiles,E1_brief_example | freshness,0.6699027654417988,,
+profiles,E2_overconfident_fast | freshness,0.6290754276905259,,
+profiles,E3_equal_reliability | freshness,0.8358550338550339,,
+profiles,E4_two_sources | freshness,0.5586956623466979,,
+profiles,E5_confidence_inverted | freshness,0.7524113124411619,,
+profiles,E6_reliable_and_fast | freshness,0.9876818181818184,,
+profiles,E1_brief_example | freshness_conflict,0.7949162860628399,,
+profiles,E2_overconfident_fast | freshness_conflict,0.6290754276905259,,
+profiles,E3_equal_reliability | freshness_conflict,0.8727058497058496,,
+profiles,E4_two_sources | freshness_conflict,0.7345984677442478,,
+profiles,E5_confidence_inverted | freshness_conflict,0.8328946504275452,,
+profiles,E6_reliable_and_fast | freshness_conflict,0.9876818181818184,,
+profiles,E1_brief_example | reliability,0.80820748913894,,
+profiles,E2_overconfident_fast | reliability,0.7752048620503997,,
+profiles,E3_equal_reliability | reliability,0.8701136363636364,,
+profiles,E4_two_sources | reliability,0.7377354128155986,,
+profiles,E5_confidence_inverted | reliability,0.821752080435904,,
+profiles,E6_reliable_and_fast | reliability,0.9391881451881452,,
+monitor,critical failure naive d=1,0.9683377308707124,0.952969569015725,0.9825027173913043
+monitor,critical failure naive d=2,0.8618421052631579,0.8225557528079458,0.8920720219593462
+monitor,critical failure naive d=4,0.8268003646308113,0.8026211026879138,0.846846931805438
+monitor,critical failure naive d=8,0.7657096424702059,0.7419778136414378,0.7873237812563005
+monitor,critical failure metadata d=1,0.0079155672823219,0.0,0.0183504345726701
+monitor,critical failure metadata d=2,0.0039473684210526,0.0,0.0083333333333333
+monitor,critical failure metadata d=4,0.0,0.0,0.0
+monitor,critical failure metadata d=8,0.0,0.0,0.0
+monitor,knows rate h0.05 d=0 (p=0.1),1.0,,
+monitor,knows rate h0.05 d=2 (p=0.1),0.4789398958826313,,
+monitor,knows rate h0.05 d=4 (p=0.1),0.3022904606091115,,
+monitor,knows rate h0.05 d=8 (p=0.1),0.0456680161943319,,
+monitor,knows rate h0.1 d=0 (p=0.1),1.0,,
+monitor,knows rate h0.1 d=2 (p=0.1),0.2830099384761003,,
+monitor,knows rate h0.1 d=4 (p=0.1),0.0231563050591492,,
+monitor,knows rate h0.1 d=8 (p=0.1),0.0,,
+monitor,knows rate h0.3 d=0 (p=0.1),0.8307692307692308,,
+monitor,knows rate h0.3 d=2 (p=0.1),0.0,,
+monitor,knows rate h0.3 d=4 (p=0.1),0.0,,
+monitor,knows rate h0.3 d=8 (p=0.1),0.0,,
+monitor,knows rate inferred d=0 (p=0.1),0.8192307692307692,,
+monitor,knows rate inferred d=2 (p=0.1),0.0004732607666824,,
+monitor,knows rate inferred d=4 (p=0.1),0.0,,
+monitor,knows rate inferred d=8 (p=0.1),0.0,,
+monitor,true KNOWS share d=0 (p=0.1),0.7576923076923077,,
+monitor,true KNOWS share d=2 (p=0.1),0.3355418835778514,,
+monitor,true KNOWS share d=4 (p=0.1),0.19884218474704254,,
+monitor,true KNOWS share d=8 (p=0.1),0.12080971659919028,,

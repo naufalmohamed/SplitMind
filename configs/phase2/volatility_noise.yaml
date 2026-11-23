@@ -1,0 +1,16 @@
+# Phase 2A: environmental volatility x observation noise (confirmatory grid, fixed before running).
+# world_change_probability      -> world.p_move
+# observation_error_probability -> world.beacon_noise AND world.sight_noise
+# All other parameters are the Phase 1 baseline (configs/baseline.yaml), including the
+# proposed method's lam = 0.1 and the observer's fixed reported confidences (0.99 / 0.8).
+seeds: 50
+seed_offset: 0
+base_config: configs/baseline.yaml
+overrides: {}
+latency: [2, 4]
+world_change_probability: [0.0, 0.05, 0.1, 0.2, 0.4, 0.6]
+observation_error_probability: [0.0, 0.05, 0.1, 0.2, 0.4, 0.6]
+strategies: [fifo, confidence, freshness, freshness_conflict]
+# Exploratory, clearly separated: proposed method given the true volatility (oracle lam = -ln(1 - p)).
+oracle_lambda_variant: true
+output: results/phase2/volatility_noise

@@ -1,0 +1,16 @@
+# Phase 2A-X (EXPLORATORY, designed after inspecting Phase 2A results).
+# Motivation: in Phase 1/2A Memory overwrites its belief with every newer report, so it is a
+# delayed copy of the Observer and "established memory" carries no independent evidence.
+# Here Memory accumulates decaying evidence instead (memory.mode = accumulate, decay = 0.1,
+# fixed a priori = the baseline lam). Everything else identical to configs/phase2/volatility_noise.yaml.
+seeds: 50
+seed_offset: 0
+base_config: configs/baseline.yaml
+overrides:
+  memory: {mode: accumulate, decay: 0.1}
+latency: [2, 4]
+world_change_probability: [0.0, 0.05, 0.1, 0.2, 0.4, 0.6]
+observation_error_probability: [0.0, 0.05, 0.1, 0.2, 0.4, 0.6]
+strategies: [fifo, confidence, freshness, freshness_conflict]
+oracle_lambda_variant: false
+output: results/phase2/volatility_noise_accumulating_memory

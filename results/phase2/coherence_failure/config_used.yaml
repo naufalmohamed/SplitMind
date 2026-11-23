@@ -1,0 +1,70 @@
+experiment:
+  seeds: 50
+  seed_offset: 0
+  base_config: configs/baseline.yaml
+  overrides: {}
+  latency:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 8
+  - 10
+  - 12
+  - 16
+  conditions:
+  - - 0.05
+    - 0.05
+  - - 0.1
+    - 0.1
+  - - 0.2
+    - 0.2
+  - - 0.1
+    - 0.4
+  - - 0.4
+    - 0.1
+  strategies:
+  - fifo
+  - confidence
+  - freshness
+  - freshness_conflict
+  thresholds:
+    coherence:
+    - 0.8
+    - 0.6
+    success:
+    - 0.95
+    - 0.8
+  sustained_conflict_steps: 3
+  output: results/phase2/coherence_failure
+resolved_base:
+  world:
+    n_rooms: 6
+    p_move: 0.1
+    beacon_interval: 3
+    beacon_noise: 0.1
+    max_steps: 50
+  observer:
+    sight_confidence: 0.99
+    beacon_confidence: 0.8
+  memory:
+    consolidate: true
+    max_confidence: 0.99
+    rehearsal_interval: 1
+  network:
+    latency: 0
+    jitter_frac: 0.5
+  strategy:
+    name: freshness_conflict
+    form: multiplicative
+    lam: 0.1
+    delta: 0.5
+    tau: 0.9
+  self_monitor:
+    hazard: 0.1
+    stale_threshold: 0.5
+    conflict_min_confidence: 0.5
+    unknown_confidence: 0.9

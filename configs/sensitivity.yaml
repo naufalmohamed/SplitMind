@@ -1,0 +1,23 @@
+# Robustness checks (run after the main experiments; results reported in full).
+seeds: 50
+seed_offset: 0
+base_config: configs/baseline.yaml
+output: results/sensitivity
+blocks:
+  - name: decay_and_penalty          # proposed method's coefficients
+    overrides: {strategy: {name: freshness_conflict}}
+    grid:
+      network.latency: [0, 2, 4, 8]
+      strategy.lam: [0.0, 0.025, 0.05, 0.1, 0.2, 0.4]
+      strategy.delta: [0.0, 0.5, 1.0]
+  - name: no_consolidation           # memory confidence no longer grows with repetition
+    overrides: {memory: {consolidate: false}}
+    grid:
+      network.latency: [0, 2, 4, 8]
+      strategy.name: [fifo, confidence, freshness, freshness_conflict]
+  - name: beacon_noise               # how often fresh evidence is wrong
+    overrides: {}
+    grid:
+      network.latency: [0, 2, 4, 8]
+      strategy.name: [fifo, confidence, freshness, freshness_conflict]
+      world.beacon_noise: [0.0, 0.1, 0.3]

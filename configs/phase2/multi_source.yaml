@@ -1,0 +1,38 @@
+# Phase 2B: multi-source observation and reliability-aware arbitration.
+# Protocol (fixed before running):
+#   1. DEVELOPMENT: tune the linear reliability-aware coefficients on dev_profiles x dev seeds
+#      (1000-1019), objective = mean workspace truth accuracy (pooled over dev profiles and p).
+#   2. EVALUATION: run every strategy on eval_profiles (disjoint from dev) x eval seeds (0-49).
+#   The Bayes form has no tuned weights (lam = 0.1, the Phase 1 default); the untuned linear form
+#   uses w_r = w_c = w_g = 1, w_a = 0.1.
+#   3. ABLATION: tuned linear + Bayes with uninformed assumed reliabilities (every source 0.75).
+world_change_probability: [0.05, 0.2]
+base_config: configs/baseline.yaml
+overrides:
+  world: {sight_noise: 0.05}
+internal_latency: 1
+seeds_dev: 20
+seed_offset_dev: 1000
+seeds_eval: 50
+seed_offset_eval: 0
+tuning_objective: ws_correct_frac
+tuning_grid:
+  w_r: [0.0, 0.5, 1.0, 2.0]
+  w_c: [0.0, 0.5, 1.0]
+  w_a: [0.02, 0.05, 0.1, 0.2]
+  w_g: [0.0, 0.5, 1.0]
+default_linear: {w_r: 1.0, w_c: 1.0, w_a: 0.1, w_g: 1.0}
+uninformed_reliability: 0.75
+# observer: [id, reliability, latency, interval, calibration]
+dev_profiles:
+  D1_graded:        [[obs_a, 0.90, 3, 2, 0.0], [obs_b, 0.70, 1, 1, 0.0], [obs_c, 0.50, 0, 1, 0.0]]
+  D2_equal:         [[obs_a, 0.85, 0, 1, 0.0], [obs_b, 0.85, 2, 1, 0.0], [obs_c, 0.85, 4, 1, 0.0]]
+  D3_slow_reliable: [[obs_a, 0.97, 5, 3, 0.0], [obs_b, 0.65, 0, 1, 0.2]]
+eval_profiles:
+  E1_brief_example:       [[obs_a, 0.95, 4, 2, 0.0], [obs_b, 0.80, 1, 1, 0.0], [obs_c, 0.60, 0, 1, 0.0]]
+  E2_overconfident_fast:  [[obs_a, 0.90, 3, 2, 0.0], [obs_b, 0.75, 1, 1, 0.1], [obs_c, 0.55, 0, 1, 0.35]]
+  E3_equal_reliability:   [[obs_a, 0.80, 0, 1, 0.0], [obs_b, 0.80, 1, 1, 0.0], [obs_c, 0.80, 2, 1, 0.0]]
+  E4_two_sources:         [[obs_a, 0.95, 2, 1, 0.0], [obs_c, 0.50, 0, 1, 0.0]]
+  E5_confidence_inverted: [[obs_a, 0.95, 2, 1, -0.3], [obs_b, 0.70, 0, 1, 0.1]]
+  E6_reliable_and_fast:   [[obs_a, 0.98, 0, 1, 0.0], [obs_b, 0.90, 1, 1, 0.0]]
+output: results/phase2/multi_source

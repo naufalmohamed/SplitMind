@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "splitmind"
+version = "0.1.0"
+description = "Cognitive coherence in an asynchronous, GWT-inspired modular agent (logical-time simulation)"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "scipy>=1.11", "pandas>=2.0", "matplotlib>=3.8", "pyyaml>=6.0", "tabulate>=0.9"]
+
+[tool.setuptools.packages.find]
+include = ["splitmind*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,19 @@
+# Phase 2C: does internal incoherence appear before behavioural failure? (confirmatory)
+# Thresholds are the ones proposed in the study brief, fixed before running; all four are reported.
+seeds: 50
+seed_offset: 0
+base_config: configs/baseline.yaml
+overrides: {}
+latency: [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16]
+conditions:            # (world_change_probability, observation_error_probability)
+  - [0.05, 0.05]
+  - [0.1, 0.1]         # Phase 1 baseline
+  - [0.2, 0.2]
+  - [0.1, 0.4]
+  - [0.4, 0.1]
+strategies: [fifo, confidence, freshness, freshness_conflict]
+thresholds:
+  coherence: [0.8, 0.6]
+  success: [0.95, 0.8]
+sustained_conflict_steps: 3   # "first sustained internal conflict" = 3 consecutive conflict steps
+output: results/phase2/coherence_failure

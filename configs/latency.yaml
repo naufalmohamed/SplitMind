@@ -1,0 +1,9 @@
+# Experiment 1: latency and staleness.
+seeds: 50
+seed_offset: 0
+base_config: configs/baseline.yaml
+overrides: {}
+grid:
+  network.latency: [0, 1, 2, 4, 8]
+  strategy.name: [fifo, confidence, freshness, freshness_conflict]
+output: results/latency
